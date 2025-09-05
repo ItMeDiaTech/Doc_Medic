@@ -155,6 +155,11 @@ public class SettingsPageViewModel : ViewModelBase
         set => SetProperty(ref _maxDegreeOfParallelism, Math.Max(1, Math.Min(Environment.ProcessorCount * 2, value)));
     }
 
+    /// <summary>
+    /// Maximum value for the parallelism slider (processor count * 2).
+    /// </summary>
+    public int MaxSliderValue => Environment.ProcessorCount * 2;
+
     // Updater Settings Properties
     public string UpdateChannel
     {

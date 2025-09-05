@@ -189,7 +189,7 @@
                         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,16">
                             <Slider Value="{Binding MaxDegreeOfParallelism}" 
                                   Minimum="1" 
-                                  Maximum="{x:Static system:Environment.ProcessorCount}"
+                                  Maximum="{Binding MaxSliderValue}"
                                   Width="200"
                                   Style="{DynamicResource MaterialDesignDiscreteSlider}"
                                   TickFrequency="1"
