@@ -123,7 +123,7 @@
                 <DataGrid Grid.Row="1" 
                         ItemsSource="{Binding Files}"
                         Style="{StaticResource FileGridStyle}"
-                        Visibility="{Binding Files.Count, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                        Visibility="{Binding Files.Count, Converter={StaticResource CountToVisibilityConverter}}"
                         x:Name="FilesDataGrid">
 
                     <DataGrid.Columns>
@@ -151,7 +151,7 @@
                         <DataGridTemplateColumn Header="Progress" Width="100">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <ProgressBar Value="{Binding Progress}" 
+                                    <ProgressBar Value="{Binding Progress, Mode=OneWay}" 
                                                Maximum="100" 
                                                Height="20"
                                                Visibility="{Binding Status, Converter={StaticResource EqualityToVisibilityConverter}, ConverterParameter=Processing}" />
@@ -243,7 +243,7 @@
                     </StackPanel>
 
                     <ProgressBar Grid.Row="1" 
-                               Value="{Binding OverallProgress}" 
+                               Value="{Binding OverallProgress, Mode=OneWay}" 
                                Maximum="100" 
                                Height="8"
                                Style="{DynamicResource MaterialDesignLinearProgressBar}" />

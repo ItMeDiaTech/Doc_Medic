@@ -1,7 +1,6 @@
 using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
-//using Prism.Regions; // TODO: Fix regions namespace issue
 using MaterialDesignThemes.Wpf;
 
 namespace App.UI.ViewModels;
@@ -11,17 +10,17 @@ namespace App.UI.ViewModels;
 /// </summary>
 public class MainWindowViewModel : BindableBase
 {
-    //private readonly IRegionManager _regionManager; // TODO: Fix regions
     private bool _isDarkTheme;
 
-    public MainWindowViewModel(/* IRegionManager regionManager */)
+    public MainWindowViewModel()
     {
-        //_regionManager = regionManager ?? throw new ArgumentNullException(nameof(regionManager));
         NavigateCommand = new DelegateCommand<string>(OnNavigate);
-        
-        // Initialize with Home page
-        //_regionManager.RequestNavigate("ContentRegion", "HomePage");
     }
+    
+    /// <summary>
+    /// Event fired when navigation is requested.
+    /// </summary>
+    public event EventHandler<App.UI.NavigationEventArgs>? NavigationRequested;
 
     /// <summary>
     /// Gets or sets whether dark theme is enabled.
@@ -47,8 +46,7 @@ public class MainWindowViewModel : BindableBase
     {
         if (string.IsNullOrEmpty(navigationPath)) return;
 
-        // TODO: Fix regions navigation
-        //_regionManager.RequestNavigate("ContentRegion", navigationPath);
+        NavigationRequested?.Invoke(this, new App.UI.NavigationEventArgs(navigationPath));
     }
 
     private static void ModifyTheme(Action<Theme> modificationAction)

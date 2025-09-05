@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.IO;
+using System.Net.Http;
 using Prism.Ioc;
 using Prism.DryIoc;
 using Serilog;
@@ -14,6 +15,7 @@ using App.Infrastructure.Http;
 using App.Infrastructure.OpenXml;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Options;
 using Serilog.Extensions.Logging;
 using Velopack;
 
@@ -70,6 +72,22 @@ namespace App.UI
             containerRegistry.RegisterSingleton<IUpdater, VelopackUpdater>();
 
             // Register infrastructure services
+            containerRegistry.RegisterSingleton<HttpClient>();
+            
+            // Configure LookupService options
+            containerRegistry.RegisterSingleton<IOptions<App.Infrastructure.Http.LookupServiceOptions>>(() =>
+            {
+                var settingsStore = Container.Resolve<ISettingsStore>();
+                var settings = settingsStore.Load();
+                var options = new App.Infrastructure.Http.LookupServiceOptions
+                {
+                    BaseUrl = settings.Api.BaseUrl,
+                    Path = settings.Api.Path,
+                    TimeoutSeconds = settings.Api.TimeoutSeconds
+                };
+                return Options.Create(options);
+            });
+            
             containerRegistry.RegisterSingleton<ILookupService, LookupService>();
             containerRegistry.RegisterSingleton<IHyperlinkIndexService, HyperlinkIndexService>();
             containerRegistry.RegisterSingleton<IHyperlinkRepairService, HyperlinkRepairService>();
@@ -83,11 +101,13 @@ namespace App.UI
             containerRegistry.Register<HomePageViewModel>();
             containerRegistry.Register<SettingsPageViewModel>();
             containerRegistry.Register<LogsPageViewModel>();
+            containerRegistry.Register<AboutPageViewModel>();
 
             // Register Views for navigation
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
             containerRegistry.RegisterForNavigation<LogsPage, LogsPageViewModel>();
+            containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
         }
 
         protected override void OnExit(ExitEventArgs e)

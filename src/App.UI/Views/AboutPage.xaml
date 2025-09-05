@@ -1,0 +1,204 @@
+﻿<UserControl x:Class="App.UI.Views.AboutPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="32">
+            
+            <!-- App Header -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+                    <materialDesign:PackIcon Kind="FileDocument" 
+                                           Width="64" Height="64" 
+                                           Margin="0,16" />
+                    <TextBlock Text="Doc Medic" 
+                             Style="{DynamicResource MaterialDesignHeadline4TextBlock}"
+                             Margin="0,8" />
+                    <TextBlock Text="Document Formatter &amp; Hyperlink Fixer" 
+                             Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+                             Opacity="0.7" />
+                    <TextBlock Text="{Binding Version, StringFormat='Version {0}'}" 
+                             Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                             Margin="0,8" />
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- Description -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="About" 
+                             Style="{DynamicResource MaterialDesignHeadline6TextBlock}"
+                             Margin="0,0,0,16" />
+                    <TextBlock TextWrapping="Wrap" 
+                             Style="{DynamicResource MaterialDesignBody1TextBlock}">
+                        Doc Medic is a modern desktop application designed to batch-process Microsoft Word documents (.docx files).
+                        It provides automated formatting and hyperlink repair services to ensure document consistency and accuracy.
+                    </TextBlock>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- Features -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Key Features" 
+                             Style="{DynamicResource MaterialDesignHeadline6TextBlock}"
+                             Margin="0,0,0,16" />
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <materialDesign:PackIcon Kind="CheckCircle" 
+                                               VerticalAlignment="Top" 
+                                               Foreground="{DynamicResource SecondaryHueMidBrush}"
+                                               Margin="0,2,12,0" />
+                        <TextBlock Text="Batch processing of multiple Word documents" 
+                                 Style="{DynamicResource MaterialDesignBody1TextBlock}"
+                                 TextWrapping="Wrap" />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <materialDesign:PackIcon Kind="CheckCircle" 
+                                               VerticalAlignment="Top" 
+                                               Foreground="{DynamicResource SecondaryHueMidBrush}"
+                                               Margin="0,2,12,0" />
+                        <TextBlock Text="Automated hyperlink repair using Power Automate API" 
+                                 Style="{DynamicResource MaterialDesignBody1TextBlock}"
+                                 TextWrapping="Wrap" />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <materialDesign:PackIcon Kind="CheckCircle" 
+                                               VerticalAlignment="Top" 
+                                               Foreground="{DynamicResource SecondaryHueMidBrush}"
+                                               Margin="0,2,12,0" />
+                        <TextBlock Text="Document style standardization (Normal, Heading 1, Heading 2, Hyperlink)" 
+                                 Style="{DynamicResource MaterialDesignBody1TextBlock}"
+                                 TextWrapping="Wrap" />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <materialDesign:PackIcon Kind="CheckCircle" 
+                                               VerticalAlignment="Top" 
+                                               Foreground="{DynamicResource SecondaryHueMidBrush}"
+                                               Margin="0,2,12,0" />
+                        <TextBlock Text="Whitespace normalization and 'Top of Document' link repair" 
+                                 Style="{DynamicResource MaterialDesignBody1TextBlock}"
+                                 TextWrapping="Wrap" />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <materialDesign:PackIcon Kind="CheckCircle" 
+                                               VerticalAlignment="Top" 
+                                               Foreground="{DynamicResource SecondaryHueMidBrush}"
+                                               Margin="0,2,12,0" />
+                        <TextBlock Text="Image centering and layout optimization" 
+                                 Style="{DynamicResource MaterialDesignBody1TextBlock}"
+                                 TextWrapping="Wrap" />
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <materialDesign:PackIcon Kind="CheckCircle" 
+                                               VerticalAlignment="Top" 
+                                               Foreground="{DynamicResource SecondaryHueMidBrush}"
+                                               Margin="0,2,12,0" />
+                        <TextBlock Text="Real-time progress tracking and detailed logging" 
+                                 Style="{DynamicResource MaterialDesignBody1TextBlock}"
+                                 TextWrapping="Wrap" />
+                    </StackPanel>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- Technical Information -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Technical Information" 
+                             Style="{DynamicResource MaterialDesignHeadline6TextBlock}"
+                             Margin="0,0,0,16" />
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Runtime:" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 FontWeight="Medium" Margin="0,0,16,8" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text=".NET 9.0" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 Margin="0,0,0,8" />
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="UI Framework:" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 FontWeight="Medium" Margin="0,0,16,8" />
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="WPF with Material Design" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 Margin="0,0,0,8" />
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Document Processing:" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 FontWeight="Medium" Margin="0,0,16,8" />
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="Open XML SDK" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 Margin="0,0,0,8" />
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Updates:" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 FontWeight="Medium" Margin="0,0,16,8" />
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="Velopack (GitHub Releases)" 
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 Margin="0,0,0,8" />
+                    </Grid>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- Update Check -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Updates" 
+                             Style="{DynamicResource MaterialDesignHeadline6TextBlock}"
+                             Margin="0,0,0,16" />
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Check for Updates" 
+                              Style="{DynamicResource MaterialDesignRaisedButton}"
+                              Command="{Binding CheckForUpdatesCommand}"
+                              IsEnabled="{Binding IsCheckingForUpdates, Converter={StaticResource InverseBooleanConverter}}">
+                            <Button.ContentTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Update" 
+                                                               VerticalAlignment="Center" 
+                                                               Margin="0,0,8,0" />
+                                        <TextBlock Text="{Binding}" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Button.ContentTemplate>
+                        </Button>
+                        
+                        <ProgressBar Style="{DynamicResource MaterialDesignCircularProgressBar}"
+                                   Width="24" Height="24"
+                                   IsIndeterminate="True"
+                                   Margin="16,0,0,0"
+                                   Visibility="{Binding IsCheckingForUpdates, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    </StackPanel>
+                    
+                    <TextBlock Text="{Binding UpdateStatus}" 
+                             Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                             Margin="0,8,0,0"
+                             Visibility="{Binding UpdateStatus, Converter={StaticResource StringNotEmptyToVisibilityConverter}}" />
+                </StackPanel>
+            </materialDesign:Card>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

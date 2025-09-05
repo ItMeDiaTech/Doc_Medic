@@ -9,7 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <!-- Material Design Resources -->
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Blue" SecondaryColor="Indigo" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
                 
                 <!-- Custom Styles -->
                 <ResourceDictionary>
@@ -19,6 +19,7 @@
                     <converters:EqualityToVisibilityConverter x:Key="EqualityToVisibilityConverter" />
                     <converters:StringNotEmptyToVisibilityConverter x:Key="StringNotEmptyToVisibilityConverter" />
                     <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+                    <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter" />
 
                     <!-- Main content area style -->
                     <Style x:Key="MainContentStyle" TargetType="Grid">

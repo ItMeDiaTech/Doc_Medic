@@ -205,7 +205,7 @@
                 <ScrollViewer x:Name="LogScrollViewer"
                             VerticalScrollBarVisibility="Auto"
                             HorizontalScrollBarVisibility="Disabled"
-                            Visibility="{Binding LogEntries.Count, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                            Visibility="{Binding LogEntries.Count, Converter={StaticResource CountToVisibilityConverter}}"
                             x:FieldModifier="public">
 
                     <ItemsControl ItemsSource="{Binding LogEntries}"

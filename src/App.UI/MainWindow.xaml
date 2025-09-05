@@ -128,7 +128,7 @@
 
             <!-- Main Content Frame -->
             <Grid Grid.Column="1" Style="{StaticResource MainContentStyle}">
-                <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+                <ContentControl x:Name="MainContentControl" />
             </Grid>
         </Grid>
     </materialDesign:DialogHost>

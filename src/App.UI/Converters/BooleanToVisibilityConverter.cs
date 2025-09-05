@@ -120,3 +120,23 @@ public class InverseBooleanConverter : IValueConverter
         return false;
     }
 }
+
+/// <summary>
+/// Converts numeric values to Visibility - visible if greater than 0.
+/// </summary>
+public class CountToVisibilityConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value != null && int.TryParse(value.ToString(), out var count))
+        {
+            return count > 0 ? Visibility.Visible : Visibility.Collapsed;
+        }
+        return Visibility.Collapsed;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}

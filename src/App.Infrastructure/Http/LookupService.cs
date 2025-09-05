@@ -154,7 +154,12 @@ public class LookupService : ILookupService, IDisposable
 
     private void ConfigureHttpClient()
     {
-        _httpClient.BaseAddress = new Uri(_options.BaseUrl);
+        // Only set BaseAddress if BaseUrl is not empty
+        if (!string.IsNullOrEmpty(_options.BaseUrl))
+        {
+            _httpClient.BaseAddress = new Uri(_options.BaseUrl);
+        }
+        
         _httpClient.Timeout = TimeSpan.FromSeconds(_options.TimeoutSeconds);
         _httpClient.DefaultRequestHeaders.Add("User-Agent", "Doc_Medic/1.0");
     }
