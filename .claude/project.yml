@@ -1,0 +1,5 @@
+# .claude/project.yml
+default_agent: doc-fixer
+context:
+  - CLADE.md  # Your Version 1 architecture doc
+  - src/**/*.cs

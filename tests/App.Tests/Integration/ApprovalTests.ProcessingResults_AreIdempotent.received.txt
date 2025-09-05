@@ -1,0 +1,65 @@
+﻿First Pass:
+<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1" />
+      </w:pPr>
+      <w:r>
+        <w:t>Minimal Test</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R183aed4220d74eb2">
+        <w:r>
+          <w:t>Test Link</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Simple content.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="#start">
+        <w:r>
+          <w:t>Top of Document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+  </w:body>
+</w:document>
+
+Second Pass:
+<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1" />
+      </w:pPr>
+      <w:r>
+        <w:t>Minimal Test</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R183aed4220d74eb2">
+        <w:r>
+          <w:t>Test Link</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Simple content.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="#start">
+        <w:r>
+          <w:t>Top of Document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+  </w:body>
+</w:document>

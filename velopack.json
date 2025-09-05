@@ -1,0 +1,46 @@
+{
+  "id": "DocMedic",
+  "title": "Doc_Medic",
+  "authors": "Doc_Medic Team",
+  "description": "Modern desktop app to batch-format .docx files and repair specific hyperlinks via a Power Automate API.",
+  "version": "1.0.0",
+  "mainExe": "DocMedic.UI.exe",
+  "packDirectory": "src/App.UI/bin/Publish",
+  "outputDirectory": "releases",
+  "channel": "Stable",
+  "delta": true,
+  "icon": "assets/icon.ico",
+  "shortcuts": ["Desktop", "StartMenu"],
+  "releaseNotes": {
+    "1.0.0": [
+      "Initial release",
+      "Batch process .docx files with hyperlink repair",
+      "Standardize document styles",
+      "Fix Top of Document links and center images",
+      "Automated updates via Velopack"
+    ]
+  },
+  "runtimes": ["win-x64"],
+  "framework": "net9.0-windows",
+  "selfContained": false,
+  "splashImage": "assets/splash.png",
+  "excludeFromPackage": [
+    "*.pdb",
+    "*.xml",
+    "*.dev.json",
+    "logs/**"
+  ],
+  "beforePack": [
+    "dotnet restore src/App.sln",
+    "dotnet build src/App.sln --configuration Release"
+  ],
+  "publishOptions": {
+    "trimUnusedCode": false,
+    "singleFile": false
+  },
+  "update": {
+    "source": "github",
+    "repo": "owner/doc-medic",
+    "prerelease": false
+  }
+}

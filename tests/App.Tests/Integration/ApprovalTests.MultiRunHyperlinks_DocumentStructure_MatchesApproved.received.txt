@@ -1,0 +1,99 @@
+﻿<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1" />
+      </w:pPr>
+      <w:r>
+        <w:t>Multi-Run Hyperlink Test</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>This document tests hyperlinks where display text spans multiple runs.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R2adbac46b2f04649">
+        <w:r>
+          <w:t>Document</w:t>
+        </w:r>
+        <w:r>
+          <w:t> Title</w:t>
+        </w:r>
+        <w:r>
+          <w:t> Split</w:t>
+        </w:r>
+        <w:r>
+          <w:t> Across</w:t>
+        </w:r>
+        <w:r>
+          <w:t> Runs</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R902820d05e3d4771">
+        <w:r>
+          <w:t>CMS </w:t>
+        </w:r>
+        <w:r>
+          <w:t>Document </w:t>
+        </w:r>
+        <w:r>
+          <w:t>With </w:t>
+        </w:r>
+        <w:r>
+          <w:t>Multiple </w:t>
+        </w:r>
+        <w:r>
+          <w:t>Runs</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R59ca9bd3d1f84f73">
+        <w:r>
+          <w:t>TSRC</w:t>
+        </w:r>
+        <w:r>
+          <w:t></w:t>
+        </w:r>
+        <w:r>
+          <w:t>Analysis</w:t>
+        </w:r>
+        <w:r>
+          <w:t> (</w:t>
+        </w:r>
+        <w:r>
+          <w:t>existing suffix</w:t>
+        </w:r>
+        <w:r>
+          <w:t>)</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>These links test the TextRange functionality for appending Content_ID suffixes.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="#start">
+        <w:r>
+          <w:t>top of document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+  </w:body>
+</w:document>

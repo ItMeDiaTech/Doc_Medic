@@ -1,0 +1,285 @@
+﻿<UserControl x:Class="App.UI.Views.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="0,0,16,0">
+        <StackPanel>
+            <!-- Header -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Settings" 
+                             Style="{DynamicResource MaterialDesignHeadline5TextBlock}" />
+                    <TextBlock Text="Configure application settings and API connections" 
+                             Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                             Opacity="0.7" Margin="0,4,0,0" />
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- API Settings -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="API Configuration" 
+                             Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+                             Margin="0,0,0,16" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Base URL -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                 Text="Base URL:" 
+                                 VerticalAlignment="Center" 
+                                 Margin="0,0,16,16" />
+                        
+                        <TextBox Grid.Row="0" Grid.Column="1" 
+                               Text="{Binding BaseUrl, UpdateSourceTrigger=PropertyChanged}"
+                               Style="{DynamicResource MaterialDesignOutlinedTextBox}"
+                               materialDesign:HintAssist.Hint="https://api.example.com"
+                               Margin="0,0,16,16" />
+
+                        <!-- API Path -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" 
+                                 Text="API Path:" 
+                                 VerticalAlignment="Center" 
+                                 Margin="0,0,16,16" />
+                        
+                        <TextBox Grid.Row="1" Grid.Column="1" 
+                               Text="{Binding ApiPath, UpdateSourceTrigger=PropertyChanged}"
+                               Style="{DynamicResource MaterialDesignOutlinedTextBox}"
+                               materialDesign:HintAssist.Hint="/lookup"
+                               Margin="0,0,16,16" />
+
+                        <!-- Timeout -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" 
+                                 Text="Timeout (sec):" 
+                                 VerticalAlignment="Center" 
+                                 Margin="0,0,16,16" />
+                        
+                        <TextBox Grid.Row="2" Grid.Column="1" 
+                               Text="{Binding TimeoutSeconds}"
+                               Style="{DynamicResource MaterialDesignOutlinedTextBox}"
+                               Margin="0,0,16,16" />
+
+                        <!-- Test Connection -->
+                        <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="3"
+                              Content="Test Connection" 
+                              Style="{DynamicResource MaterialDesignOutlinedButton}"
+                              Command="{Binding TestConnectionCommand}"
+                              VerticalAlignment="Top"
+                              Width="120">
+                            <Button.ContentTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Connection" 
+                                                               VerticalAlignment="Center" Margin="0,0,8,0" />
+                                        <TextBlock Text="{Binding}" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Button.ContentTemplate>
+                        </Button>
+
+                        <!-- Connection Test Result -->
+                        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                                 Text="{Binding ConnectionTestResult}"
+                                 Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                                 Margin="0,8,0,0"
+                                 Visibility="{Binding ConnectionTestResult, Converter={StaticResource StringNotEmptyToVisibilityConverter}}" />
+
+                        <!-- Progress for testing -->
+                        <ProgressBar Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+                                   IsIndeterminate="True"
+                                   Height="4"
+                                   Margin="0,8,0,0"
+                                   Visibility="{Binding IsTestingConnection, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    </Grid>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- UI Settings -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Appearance" 
+                             Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+                             Margin="0,0,0,16" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Theme -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                 Text="Theme:" 
+                                 VerticalAlignment="Center" 
+                                 Margin="0,0,16,16" />
+                        
+                        <ComboBox Grid.Row="0" Grid.Column="1" 
+                                ItemsSource="{Binding ThemeOptions}"
+                                SelectedItem="{Binding SelectedTheme}"
+                                Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                                Margin="0,0,0,16" />
+
+                        <!-- Accent Color -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" 
+                                 Text="Accent Color:" 
+                                 VerticalAlignment="Center" 
+                                 Margin="0,0,16,16" />
+                        
+                        <ComboBox Grid.Row="1" Grid.Column="1" 
+                                ItemsSource="{Binding AccentOptions}"
+                                SelectedItem="{Binding SelectedAccent}"
+                                Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                                Margin="0,0,0,16" />
+
+                        <!-- Remember Window State -->
+                        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                Content="Remember window size and position" 
+                                IsChecked="{Binding RememberWindowState}"
+                                Style="{DynamicResource MaterialDesignCheckBox}" />
+                    </Grid>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- Processing Settings -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Processing Options" 
+                             Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+                             Margin="0,0,0,16" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Max Parallelism -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                 Text="Max Threads:" 
+                                 VerticalAlignment="Center" 
+                                 Margin="0,0,16,16" />
+                        
+                        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,0,0,16">
+                            <Slider Value="{Binding MaxDegreeOfParallelism}" 
+                                  Minimum="1" 
+                                  Maximum="{x:Static system:Environment.ProcessorCount}"
+                                  Width="200"
+                                  Style="{DynamicResource MaterialDesignDiscreteSlider}"
+                                  TickFrequency="1"
+                                  IsSnapToTickEnabled="True" />
+                            <TextBlock Text="{Binding MaxDegreeOfParallelism}" 
+                                     VerticalAlignment="Center" 
+                                     Margin="16,0,0,0"
+                                     MinWidth="20" />
+                        </StackPanel>
+
+                        <!-- Keep Backup -->
+                        <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                Content="Keep backup copies of processed files (.bak)" 
+                                IsChecked="{Binding KeepBackup}"
+                                Style="{DynamicResource MaterialDesignCheckBox}" />
+                    </Grid>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- Updater Settings -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Updates" 
+                             Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+                             Margin="0,0,0,16" />
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Update Channel -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                 Text="Update Channel:" 
+                                 VerticalAlignment="Center" 
+                                 Margin="0,0,16,16" />
+                        
+                        <ComboBox Grid.Row="0" Grid.Column="1" 
+                                ItemsSource="{Binding UpdateChannels}"
+                                SelectedItem="{Binding UpdateChannel}"
+                                Style="{DynamicResource MaterialDesignOutlinedComboBox}"
+                                Margin="0,0,0,16" />
+
+                        <!-- Check on Startup -->
+                        <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                Content="Check for updates on startup" 
+                                IsChecked="{Binding CheckOnStartup}"
+                                Style="{DynamicResource MaterialDesignCheckBox}" />
+                    </Grid>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <!-- Action Buttons -->
+            <materialDesign:Card Style="{StaticResource SectionCardStyle}">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="Reset to Defaults" 
+                          Style="{DynamicResource MaterialDesignOutlinedButton}"
+                          Command="{Binding ResetSettingsCommand}"
+                          Margin="0,0,16,0">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Restore" 
+                                                           VerticalAlignment="Center" Margin="0,0,8,0" />
+                                    <TextBlock Text="{Binding}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+
+                    <Button Content="Save Settings" 
+                          Style="{DynamicResource MaterialDesignRaisedButton}"
+                          Command="{Binding SaveSettingsCommand}">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="ContentSave" 
+                                                           VerticalAlignment="Center" Margin="0,0,8,0" />
+                                    <TextBlock Text="{Binding}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+                </StackPanel>
+            </materialDesign:Card>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

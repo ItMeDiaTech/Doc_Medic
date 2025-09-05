@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(src/**)",
+      "Read(tests/**)",
+      "Edit(src/**)",
+      "Edit(tests/**)",
+      "Write(src/**)",
+      "Write(tests/**)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet test:*)"
+    ],
+    "ask": [
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Read(README.md)",
+      "Edit(README.md)",
+      "Write(README.md)"
+    ],
+    "deny": [
+      "Read(./secrets/**)",
+      "Read(./.env*)",
+      "Bash(rm -rf:*)",
+      "Bash(powershell Remove-Item -Recurse -Force:*)"
+    ],
+    "additionalDirectories": []
+  },
+  "memory": {
+    "include": [
+      "CLAUDE.md"
+    ],
+    "refreshOnStart": true
+  },
+  "defaults": {
+    "mode": "acceptEdits",
+    "agent": "doc-fixer"
+  }
+}

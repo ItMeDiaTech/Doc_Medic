@@ -1,0 +1,8 @@
+﻿Document Text:
+Multi-Run Hyperlink TestThis document tests hyperlinks where display text spans multiple runs.Document Title Split Across RunsCMS Document With Multiple RunsTSRC Analysis (existing suffix)These links test the TextRange functionality for appending Content_ID suffixes.top of document
+
+Hyperlink Display Texts:
+Document Title Split Across Runs
+CMS Document With Multiple Runs
+TSRC Analysis (existing suffix)
+top of document

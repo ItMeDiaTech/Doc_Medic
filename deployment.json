@@ -1,0 +1,61 @@
+{
+  "appSettings": {
+    "productionDefaults": {
+      "api": {
+        "baseUrl": "",
+        "path": "/lookup",
+        "timeoutSeconds": 30
+      },
+      "updater": {
+        "channel": "Stable",
+        "checkOnStartup": true,
+        "githubRepo": "owner/doc-medic"
+      },
+      "ui": {
+        "theme": "Light",
+        "accent": "Blue",
+        "rememberWindowState": true
+      },
+      "processing": {
+        "keepBackup": true,
+        "maxDegreeOfParallelism": -1,
+        "defaultOptions": {
+          "collapseDoubleSpaces": true,
+          "fixTopOfDocLinks": true,
+          "standardizeStyles": true,
+          "centerImages": false
+        }
+      }
+    }
+  },
+  "velopack": {
+    "packageId": "DocMedic",
+    "packageTitle": "Doc_Medic",
+    "packageAuthors": "Doc_Medic Team",
+    "packageDescription": "Modern desktop app to batch-format .docx files and repair specific hyperlinks via a Power Automate API.",
+    "mainExecutable": "DocMedic.UI.exe",
+    "targetRuntime": "win-x64",
+    "framework": "net9.0-windows",
+    "shortcuts": ["Desktop", "StartMenu"],
+    "updateChannel": "Stable",
+    "enableDelta": true
+  },
+  "github": {
+    "releaseAssets": [
+      "*.exe",
+      "*.nupkg", 
+      "RELEASES"
+    ],
+    "includePrereleases": false,
+    "autoGenerateReleaseNotes": true
+  },
+  "buildConfiguration": {
+    "configuration": "Release",
+    "targetFramework": "net9.0-windows",
+    "runtime": "win-x64",
+    "selfContained": false,
+    "singleFile": false,
+    "trimUnusedCode": false,
+    "includeNativeLibrariesForSelfExtract": false
+  }
+}

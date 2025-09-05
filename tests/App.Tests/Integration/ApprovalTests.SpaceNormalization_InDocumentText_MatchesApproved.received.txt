@@ -1,0 +1,1 @@
+﻿Formatting Issues TestThis document contains various formatting problems.Paragraph with multiple spaces everywhere.Another paragraph with spacing issues.[uncentered-image-1]Content between images.[uncentered-image-2]Link needing URL fixLink needing suffix (wrong)top of documentTop of Document

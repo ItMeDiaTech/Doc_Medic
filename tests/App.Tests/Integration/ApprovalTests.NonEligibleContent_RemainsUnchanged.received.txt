@@ -1,0 +1,59 @@
+﻿Before:
+<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:r>
+        <w:t>Test Document</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rf1825dfe5afd464e">
+        <w:r>
+          <w:t>Google</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rf305b5e2eddc483a">
+        <w:r>
+          <w:t>Email</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Regular content</w:t>
+      </w:r>
+    </w:p>
+  </w:body>
+</w:document>
+
+After:
+<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:r>
+        <w:t>Test Document</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rf1825dfe5afd464e">
+        <w:r>
+          <w:t>Google</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rf305b5e2eddc483a">
+        <w:r>
+          <w:t>Email</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Regular content</w:t>
+      </w:r>
+    </w:p>
+  </w:body>
+</w:document>

@@ -1,0 +1,139 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., 1.0.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    env:
+      SOLUTION_PATH: src/App.sln
+      PROJECT_PATH: src/App.UI/App.UI.csproj
+      PUBLISH_PATH: src/App.UI/bin/Publish
+      
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: Install Velopack
+      run: dotnet tool install -g vpk
+
+    - name: Determine version
+      id: version
+      shell: pwsh
+      run: |
+        if ("${{ github.event_name }}" -eq "workflow_dispatch") {
+          $version = "${{ github.event.inputs.version }}"
+        } else {
+          $version = "${{ github.ref_name }}".TrimStart('v')
+        }
+        echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+        echo "Version: $version"
+
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
+
+    - name: Build solution
+      run: dotnet build ${{ env.SOLUTION_PATH }} --configuration Release --no-restore
+
+    - name: Run tests
+      run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-build --verbosity normal
+
+    - name: Publish application
+      run: |
+        dotnet publish ${{ env.PROJECT_PATH }} \
+          --configuration Release \
+          --output ${{ env.PUBLISH_PATH }} \
+          --runtime win-x64 \
+          --self-contained false \
+          -p:PublishSingleFile=false \
+          -p:Version=${{ steps.version.outputs.VERSION }} \
+          -p:AssemblyVersion=${{ steps.version.outputs.VERSION }} \
+          -p:FileVersion=${{ steps.version.outputs.VERSION }}
+
+    - name: Create Velopack package
+      shell: pwsh
+      run: |
+        $publishPath = "${{ env.PUBLISH_PATH }}"
+        $version = "${{ steps.version.outputs.VERSION }}"
+        
+        # Create the initial Velopack package
+        vpk pack --packId DocMedic --packVersion $version --packDir $publishPath --outputDir releases
+        
+        Write-Host "Velopack package created successfully"
+        
+        # List created files
+        Get-ChildItem -Path releases -Recurse
+
+    - name: Generate release notes
+      id: release_notes
+      shell: pwsh
+      run: |
+        $version = "${{ steps.version.outputs.VERSION }}"
+        $releaseNotes = @"
+        # Doc_Medic v$version
+        
+        ## Features
+        - Batch process .docx files with hyperlink repair
+        - Standardize document styles (Normal, Heading 1, Heading 2, Hyperlink)
+        - Fix Top of Document links and center images
+        - Collapse multiple spaces and normalize formatting
+        - Automated updates via Velopack
+        
+        ## Installation
+        Download and run the installer below. The application will automatically check for updates.
+        
+        ## System Requirements
+        - Windows 10/11
+        - .NET 9 Runtime (automatically installed if needed)
+        
+        ---
+        *This release was automatically built and packaged using GitHub Actions and Velopack.*
+        "@
+        
+        # Escape for GitHub Actions
+        $releaseNotes = $releaseNotes -replace "`n", "%0A" -replace "`r", "%0D"
+        echo "RELEASE_NOTES=$releaseNotes" >> $env:GITHUB_OUTPUT
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v${{ steps.version.outputs.VERSION }}
+        name: Doc_Medic v${{ steps.version.outputs.VERSION }}
+        body: ${{ steps.release_notes.outputs.RELEASE_NOTES }}
+        files: |
+          releases/*.exe
+          releases/*.nupkg
+          releases/RELEASES
+        draft: false
+        prerelease: ${{ contains(steps.version.outputs.VERSION, 'preview') || contains(steps.version.outputs.VERSION, 'beta') || contains(steps.version.outputs.VERSION, 'alpha') }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: doc-medic-v${{ steps.version.outputs.VERSION }}
+        path: |
+          releases/
+          ${{ env.PUBLISH_PATH }}/
+        retention-days: 30

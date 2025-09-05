@@ -1,0 +1,124 @@
+﻿<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:bookmarkStart w:name="DocStart" w:id="1" />
+      <w:r>
+        <w:t>Document Start</w:t>
+      </w:r>
+      <w:bookmarkEnd w:id="1" />
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1" />
+      </w:pPr>
+      <w:r>
+        <w:t>Top of Document Test</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>This document tests Top of Document link processing.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Section 1</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Content goes here...</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="DocStart">
+        <w:r>
+          <w:t>Top of Document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Section 2</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>More content...</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="DocStart">
+        <w:r>
+          <w:t>top of document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Section 3</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Even more content...</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="DocStart">
+        <w:r>
+          <w:t>TOP OF DOCUMENT</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Section 4</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Final section...</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="DocStart">
+        <w:r>
+          <w:t>  Top of Document  </w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+  </w:body>
+</w:document>

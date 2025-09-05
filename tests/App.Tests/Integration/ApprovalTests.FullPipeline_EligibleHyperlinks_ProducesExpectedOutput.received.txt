@@ -1,0 +1,146 @@
+﻿<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1" />
+      </w:pPr>
+      <w:r>
+        <w:t>Document Processing Test</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>This document contains hyperlinks that should be processed by Doc_Medic.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R4fd36fb0577941f6">
+        <w:r>
+          <w:t>Legacy Document Link</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R5548beeb3af94e5b">
+        <w:r>
+          <w:t>Report Reference</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R785742f223ad4429">
+        <w:r>
+          <w:t>Form Document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Content ID References:</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Raaceedb359674c0e">
+        <w:r>
+          <w:t>CMS Document (wrong suffix)</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rf17172bddaaf43da">
+        <w:r>
+          <w:t>TSRC Analysis Report</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rf61bc56e26d64b6f">
+        <w:r>
+          <w:t>User Guide Reference</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Non-eligible Links:</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rfdbc75850c4746a6">
+        <w:r>
+          <w:t>Google Search</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R6820e8cb12f9453d">
+        <w:r>
+          <w:t>Email Support</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R2809f7d971744638">
+        <w:r>
+          <w:t>Microsoft Office Docs</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Mixed Content with multiple spaces  and   formatting   issues.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="#top">
+        <w:r>
+          <w:t>Top of Document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:jc w:val="center" />
+      </w:pPr>
+      <w:r>
+        <w:t>[sample-chart]</w:t>
+      </w:r>
+    </w:p>
+  </w:body>
+</w:document>

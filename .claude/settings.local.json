@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet sln add:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet nuget locals:*)",
+      "Bash(dotnet nuget list:*)",
+      "Bash(ls:*)",
+      "Read(//c/Users/DiaTech/AppData/Roaming/NuGet/**)",
+      "Bash(dotnet clean:*)",
+      "Bash(dotnet list:*)",
+      "Bash(dotnet test:*)",
+      "Bash(git --version)",
+      "Bash(git init:*)",
+      "Bash(gh:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "outputStyle": "default"
+}

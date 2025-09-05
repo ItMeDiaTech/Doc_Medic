@@ -1,0 +1,233 @@
+﻿<w:document xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:body>
+    <w:p>
+      <w:bookmarkStart w:name="DocStart" w:id="1" />
+      <w:bookmarkEnd w:id="1" />
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1" />
+      </w:pPr>
+      <w:r>
+        <w:t>Comprehensive Doc_Medic Test Document</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Normal" />
+      </w:pPr>
+      <w:r>
+        <w:t>This document tests all Doc_Medic processing capabilities in a single file.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Eligible Hyperlinks</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R1e7fdab7fc624d34">
+        <w:r>
+          <w:t>Legacy Document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R04a96765362b44b1">
+        <w:r>
+          <w:t>System Report</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R15538579030641f8">
+        <w:r>
+          <w:t>CMS Document (123456)</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rb62eeb3ed6774dc7">
+        <w:r>
+          <w:t>TSRC Test Data</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Multi-Run Display Text</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rb76d37da6087495a">
+        <w:r>
+          <w:t>Multi</w:t>
+        </w:r>
+        <w:r>
+          <w:t> Run</w:t>
+        </w:r>
+        <w:r>
+          <w:t> Document</w:t>
+        </w:r>
+        <w:r>
+          <w:t> Link</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R5f31477be8dd4221">
+        <w:r>
+          <w:t>CMS </w:t>
+        </w:r>
+        <w:r>
+          <w:t>Split </w:t>
+        </w:r>
+        <w:r>
+          <w:t>Link </w:t>
+        </w:r>
+        <w:r>
+          <w:t>(wrong suffix)</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Formatting Issues</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Normal" />
+      </w:pPr>
+      <w:r>
+        <w:t>Text  with   multiple    spaces    needs     normalization.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:jc w:val="center" />
+      </w:pPr>
+      <w:r>
+        <w:t>[comprehensive-chart-1]</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t>Content  between   images.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:jc w:val="center" />
+      </w:pPr>
+      <w:r>
+        <w:t>[comprehensive-chart-2]</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Non-Eligible Links</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rf82439dddef5437a">
+        <w:r>
+          <w:t>Google</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="Rea5a164ab61b4c3e">
+        <w:r>
+          <w:t>Email Link</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="R717ad477f120410a">
+        <w:r>
+          <w:t>Regular Website</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2" />
+      </w:pPr>
+      <w:r>
+        <w:t>Navigation</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="DocStart">
+        <w:r>
+          <w:t>Top of Document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="DocStart">
+        <w:r>
+          <w:t>top of document</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:hyperlink w:anchor="DocStart">
+        <w:r>
+          <w:t>TOP OF DOCUMENT</w:t>
+        </w:r>
+      </w:hyperlink>
+    </w:p>
+    <w:p>
+      <w:r>
+        <w:t />
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Normal" />
+      </w:pPr>
+      <w:r>
+        <w:t>End of Test Document</w:t>
+      </w:r>
+    </w:p>
+  </w:body>
+</w:document>
