@@ -1,5 +1,5 @@
 ﻿<hyperlinkRelationships>
-  <relationship id="R8e11d59787b940f3" uri="http://example.com/?docid=12345" />
-  <relationship id="Re0ddfb6659c54f7a" uri="http://site.com/CMS-1-123456/path" />
-  <relationship id="R821a94eb4aa64afb" uri="http://test.com/TSRC-abc123-987654" />
+  <relationship id="R4df50c2fb0244707" uri="http://example.com/?docid=12345" />
+  <relationship id="R9e4a799b86524e5b" uri="http://site.com/CMS-1-123456/path" />
+  <relationship id="Rdac2f983e99c4c40" uri="http://test.com/TSRC-abc123-987654" />
 </hyperlinkRelationships>
